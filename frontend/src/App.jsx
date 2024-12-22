@@ -1,22 +1,21 @@
-import './App.css'
-import { Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Utilisation de BrowserRouter au lieu de Router
 
-import Header from '../src/assets/components/Header.jsx'
-
+import Header from './assets/components/header/Header';
+import Footer from './assets/components/footer/Footer';
 
 function App() {
-  
   return (
     <>
       <Router>
-        <Header/>
+        <Header />
         <Routes>
-          <Route index element ={'Page dacceuil'}></Route>
+          <Route index element={'Page d\'accueil'} /> 
         </Routes>
+        <Footer />
       </Router>
-      
     </>
-  )
+  );
 }
 
-export default App
+export default App;
