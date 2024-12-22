@@ -1,3 +1,73 @@
-h2{
-    color: azure;
+.section-one-custom{
+    background: url(../../images/Background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 590px;
+    position: relative;
+}
+.section-one-custom::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:linear-gradient(to bottom,rgba(8, 8, 8, 0.732),#000000bb);
+    z-index:1;
+}
+.td-custom{
+    position: absolute;
+    z-index: 2;
+    width: 69%;
+    font-size: 1em;
+    flex-direction: column;
+}
+.fs-custom{
+    font-size: 50px;
+}
+.custom{
+    width: auto;
+    overflow: hidden;
+    text-decoration: none;
+    padding:10px 25px;
+    border-radius: 50px;
+    margin-top:30px;
+}
+.input-custom:focus{
+    outline: none;
+}
+.btn-custom{
+    gap: 5px;
+    padding: 4px;
+    align-items: center;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 50px;
+}
+.section-two{
+    height: 100vh;
+}
+.top {
+    position: relative;
+    top: -39px;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.971);
+    z-index: 3;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    overflow: hidden; 
+    border-top: #ff0000 4px solid;
+}
+
+.top::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; 
+    background: linear-gradient(to right, #ff0000, #0026fff8); 
+    z-index: 4; 
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
 }
