@@ -93,12 +93,62 @@
     border-radius: 20px;
 }
 .contenu-offre-custom:hover{
-    background:linear-gradient(to left, #5e13b39b,#000000);
+    background:linear-gradient(to left, #997cbb9b,#000000);
 }
 .linkInfo-custom{
     background-color: #2e2e2ec6;
     text-decoration: none;
 }
+.container-cards-infos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2em;
+    width: 100%;
+}
+.card-custom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #1a1a1a, #121212);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6), inset 0 -5px 10px rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    padding: 2em;
+    transform-style: preserve-3d; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    color: #ffffff; 
+    text-align: center;
+}
+.card-custom:hover {
+    transform: translateY(-10px) scale(1.05); 
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8), inset 0 -5px 15px rgba(255, 255, 255, 0.1); 
+}
+.icon-custom {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1em;
+    background: linear-gradient(145deg, #ff4d4d, #a60000); 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 15px rgba(255, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.2); 
+    transform: translateZ(10px); 
+    overflow: hidden;
+}
+.card-custom h4 {
+    font-size: 1.4em;
+    margin: 0.5em 0;
+    color: #ffffff; 
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); 
+}
+.card-custom p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #d3d3d3; 
+}
+
 @media(width<700px){
     .fs-custom{
         font-size: 1.9em;
@@ -119,5 +169,15 @@
         position: relative;
         bottom: 50px;
         z-index: 3;
+    }
+    .icon-custom {
+        width: 60px;
+        height: 60px;
+    }
+    .card-custom h4 {
+        font-size: 1.2em;
+    }
+    .card-custom p {
+        font-size: 0.85em;
     }
 }

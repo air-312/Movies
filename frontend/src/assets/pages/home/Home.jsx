@@ -1,5 +1,9 @@
 import {Link} from 'react-router-dom'
 import iconPopcorn from '../../images/Icons/popcorn_time_macos_bigsur_icon_189462.ico'
+import iconInfini from '../../images/Icons/infini.png'
+import iconSansPublicite from '../../images/Icons/sans-publicité.png'
+import iconOffresExclusive from '../../images/Icons/offres-exclusive.png'
+import iconSupportPrenium from '../../images/Icons/support-prenium.png'
 import './Home.css'
 
 const Home =()=>{
@@ -46,6 +50,40 @@ const Home =()=>{
                     </div>
 
                 </div>
+                <div className="p-5 section-four">
+                    <h4 className='text-left mb-4'>Encore plus de raisons de vous abonner</h4>
+                    <div className="container-cards-infos">
+                            
+                                <div className="card-custom">
+                                    <h4>Accès Illimité</h4>
+                                    <p>Profitez de milliers de contenus sans aucune restriction, disponibles 24h/24 et 7j/7.</p>
+                                    <img className='icon-custom' src={iconInfini} alt="Accès illimité" />
+                                </div>
+                           
+                            
+                                <div className="card-custom">
+                                    <h4>Sans Publicité</h4>
+                                    <p>Savourez vos contenus sans interruptions, pour une expérience fluide et agréable.</p>
+                                    <img className='icon-custom' src={iconSansPublicite} alt="Sans publicité" />
+                                </div>
+                            
+                            
+                                <div className="card-custom">
+                                    <h4>Offres Exclusives</h4>
+                                    <p>Bénéficiez d’offres et de réductions réservées uniquement aux abonnés.</p>
+                                    <img className='icon-custom' src={iconOffresExclusive} alt="Offres exclusives" />
+                                </div>
+                            
+                            
+                                <div className="card-custom">
+                                    <h4>Support Premium</h4>
+                                    <p>Accédez à une assistance rapide et dédiée pour résoudre tous vos problèmes.</p>
+                                    <img className='icon-custom' src={iconSupportPrenium} alt="Support premium" />
+                            </div>
+                        
+                    </div>
+                </div>
+
             </div>
         </>
     )
