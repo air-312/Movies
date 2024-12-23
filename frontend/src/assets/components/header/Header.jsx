@@ -20,7 +20,7 @@ const Header = () => {
 
     return (
         <>
-            <header className='d-flex align-center justify-content-between px-5 py-3'>
+            <header className='d-flex align-center px-5 py-3'>
                 <div className="logos">
                     <Link to="/" >
                             <img src={logoDesktop} alt="logo-desktop" className="logo-desktop" />

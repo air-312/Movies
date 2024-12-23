@@ -12,8 +12,19 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background:linear-gradient(to bottom,rgba(8, 8, 8, 0.732),#000000bb);
+    background:linear-gradient(to bottom,rgba(8, 8, 8, 0.732),#000000);
     z-index:1;
+}
+.blurry{
+    width: 50%;
+    height: 30px;
+    background-color: #ffffffd2;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    bottom: 30px;
+    left: 28%;
+    box-shadow: 1px 20px 100px 5px rgb(11, 19, 255);
 }
 .td-custom{
     position: absolute;
@@ -23,26 +34,23 @@
     flex-direction: column;
 }
 .fs-custom{
-    font-size: 50px;
+    font-size: 3em;
 }
 .custom{
-    width: auto;
-    overflow: hidden;
+    width: 100%;
+    gap: 1em;
     text-decoration: none;
-    padding:10px 25px;
-    border-radius: 50px;
     margin-top:30px;
+    flex-wrap: wrap;
 }
 .input-custom:focus{
     outline: none;
 }
 .btn-custom{
     gap: 5px;
-    padding: 4px;
     align-items: center;
     background-color: #ff0000;
     color: #fff;
-    border-radius: 50px;
 }
 .section-two{
     height: 100vh;
@@ -50,9 +58,9 @@
 .top {
     position: relative;
     top: -39px;
-    height: 10vh;
+    height: 20vh;
     background-color: rgba(0, 0, 0, 0.971);
-    z-index: 3;
+    z-index: 1;
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
     overflow: hidden; 
@@ -66,8 +74,50 @@
     left: 0;
     width: 100%;
     height: 3px; 
-    background: linear-gradient(to right, #ff0000, #0026fff8); 
-    z-index: 4; 
+    background: linear-gradient(to right, #ff0000, #0569fef8); 
+    z-index: 2; 
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
+}
+.pb-un-custom{
+    width: 100%;
+}
+.pb-un-custom:hover{
+    transform: scale(1.09);
+    transition: all 0.5s ease;
+    z-index: 4;
+}
+.contenu-offre-custom{
+    border: 1px solid #3b3b3b;
+    background:linear-gradient(to left, #43127a9b,#000000);
+    border-radius: 20px;
+}
+.contenu-offre-custom:hover{
+    background:linear-gradient(to left, #5e13b39b,#000000);
+}
+.linkInfo-custom{
+    background-color: #2e2e2ec6;
+    text-decoration: none;
+}
+@media(width<700px){
+    .fs-custom{
+        font-size: 1.9em;
+        margin-top: 1em;
+    }
+    .pb-un-custom{
+        position: relative;
+        right: 35px;
+    }
+    .popcorn-custom{
+        position: relative;
+        left: 100px;
+        bottom: 149px;
+        width: 15%;
+        z-index: 6;
+    }
+    .contenu-offre-custom{
+        position: relative;
+        bottom: 50px;
+        z-index: 3;
+    }
 }

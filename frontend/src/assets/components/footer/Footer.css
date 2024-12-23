@@ -1,9 +1,13 @@
 .logo{
     width: 150px;
 }
+.profil-custom{
+    width: 25%;
+}
 .p-custom{
     padding: 40px 0 0 0;
-    font-size: 17px;
+    font-size: 1em;
+    width: 100%;
 }
 .custom-container-footer{
     background-color: #131313;
@@ -11,14 +15,13 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    bottom: 0;
 }
 .custom-link-menu, .custom-social-link{
     text-transform: capitalize;
     text-decoration: none;
     font-weight: 300;
     transition: all 0.3s ease;
+    color: #fff;
 }
 .custom-link-menu:hover{
     padding-left: 8px;
@@ -37,6 +40,12 @@
 }
 @media(width<700px){
     .custom-container-footer{
-        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .p-custom{
+        width: 100%;
+    }
+    .profil-custom{
+    width: 100%;
     }
 }

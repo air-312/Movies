@@ -4,13 +4,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Ut
 import Header from './assets/components/header/Header';
 import Footer from './assets/components/footer/Footer';
 
+import Home from './assets/pages/home/Home';
+
 function App() {
   return (
     <>
       <Router>
         <Header />
         <Routes>
-          <Route index element={'Page d\'accueil'} /> 
+          <Route index element={<Home/>} /> 
         </Routes>
         <Footer />
       </Router>
