@@ -133,7 +133,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 15px rgba(255, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 8px 15px rgba(255, 0, 0, 0.5), inset 0 2px 5px rgb(98, 3, 3); 
     transform: translateZ(10px); 
     overflow: hidden;
 }
