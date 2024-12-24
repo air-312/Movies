@@ -137,7 +137,7 @@
     transform: translateZ(10px); 
     overflow: hidden;
 }
-.card-custom h4 {
+.card-custom h4 { 
     font-size: 1.4em;
     margin: 0.5em 0;
     color: #ffffff; 
@@ -147,6 +147,10 @@
     font-size: 0.9em;
     line-height: 1.6;
     color: #d3d3d3; 
+}
+.answer-custom {
+    transform: translateY(-6%); 
+    background-color: #1c1b1b;
 }
 
 @media(width<700px){

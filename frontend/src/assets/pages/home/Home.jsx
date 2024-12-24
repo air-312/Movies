@@ -1,4 +1,5 @@
-import {Link} from 'react-router-dom'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import iconPopcorn from '../../images/Icons/popcorn_time_macos_bigsur_icon_189462.ico'
 import iconInfini from '../../images/Icons/infini.png'
 import iconSansPublicite from '../../images/Icons/sans-publicité.png'
@@ -6,7 +7,54 @@ import iconOffresExclusive from '../../images/Icons/offres-exclusive.png'
 import iconSupportPrenium from '../../images/Icons/support-prenium.png'
 import './Home.css'
 
-const Home =()=>{
+const Home = () => {
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const faqData = [
+        {
+            question: "Qu'est-ce que Movies ?",
+            answer: "Movies est une plateforme qui offre un accès illimité à des films et séries en streaming. Notre objectif est de fournir une expérience cinématographique de qualité supérieure, accessible sur plusieurs appareils."
+        },
+        {
+            question: "Comment puis-je m'inscrire ?",
+            answer: "Pour vous inscrire, cliquez sur le bouton \"S'inscrire\" situé en haut de la page d'accueil. Remplissez vos informations personnelles, suivez les étapes, et vous serez prêt à utiliser notre service."
+        },
+        {
+            question: "Est-ce que Movies est gratuit ?",
+            answer: "Movies fonctionne sur un modèle d'abonnement à 5 euros par mois. Ce forfait inclut toutes nos fonctionnalités premium, telles que le téléchargement hors ligne et les recommandations personnalisées."
+        },
+        {
+            question: "Quels appareils sont compatibles avec Movies ?",
+            answer: "Movies est compatible avec : - Les ordinateurs (PC et Mac) via les navigateurs web. - Les smartphones et tablettes via notre application mobile (iOS et Android). - Certaines télévisions connectées et boîtiers de streaming."
+        },
+        {
+            question: "Puis-je annuler mon abonnement à tout moment ?",
+            answer: "Oui, vous pouvez annuler votre abonnement à tout moment directement depuis votre espace utilisateur. L’annulation prendra effet à la fin de votre période de facturation actuelle."
+        },
+        {
+            question: "Est-ce que mes données personnelles sont en sécurité ?",
+            answer: "Nous accordons une grande importance à la protection de vos données personnelles. Toutes vos informations sont stockées en toute sécurité, et nous utilisons des protocoles de cryptage avancés pour garantir leur confidentialité. Consultez notre Politique de confidentialité pour en savoir plus."
+        },
+        {
+            question: "Que faire si je rencontre un problème technique ?",
+            answer: "Si vous rencontrez un problème, veuillez consulter notre page Aide pour trouver des solutions rapides. Vous pouvez également contacter notre service client par : - E-mail : support@movies.com - Chat en direct via notre plateforme. - Téléphone : 01 23 45 67 89."
+        },
+        {
+            question: "Quels sont les modes de paiement acceptés ?",
+            answer: "Nous acceptons les paiements par : - Carte bancaire (Visa, Mastercard, American Express) - PayPal - Paiement mobile via Google Pay et Apple Pay."
+        },
+        {
+            question: "Puis-je utiliser Movies à l'étranger ?",
+            answer: "Oui, Movies est accessible depuis la plupart des pays, tant que vous disposez d'une connexion Internet. Cependant, certaines fonctionnalités ou contenus peuvent être limités en fonction de votre localisation géographique."
+        },
+        {
+            question: "Comment puis-je donner mon avis ou des suggestions ?",
+            answer: "Nous adorons entendre vos retours ! Vous pouvez nous faire part de vos suggestions ou commentaires via notre formulaire de contact ou en nous envoyant un e-mail à feedback@movies.com."
+        }
+    ];
+    const toggleFAQ = (home) => {
+        setActiveIndex(activeIndex === home ? null : home)
+    }
     return (
         <>
             <div className=" text-light container-home">
@@ -83,7 +131,20 @@ const Home =()=>{
                         
                     </div>
                 </div>
-
+                 <div className="px-5 section-five">
+                    <h4>Foire aux questions</h4>
+                    <div className="container-faq">
+                        {faqData.map((item, home) => (
+                            <div className="text-left d-flex flex-column justify-content-center align-items-center gap-0 items-faq-custom" key={home}>
+                                <h5 className='bg-dark justify-content-between d-flex align-items-center w-100 p-3' onClick={() => toggleFAQ(home)}>
+                                    {item.question} <i className="fas fa-plus"></i>
+                                </h5>
+                                    {activeIndex === home && <p className=' w-100 p-2  answer-custom'>{item.answer}</p>}
+                                
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </>
     )
