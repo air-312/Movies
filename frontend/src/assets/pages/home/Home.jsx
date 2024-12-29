@@ -5,6 +5,15 @@ import iconInfini from '../../images/Icons/infini.png'
 import iconSansPublicite from '../../images/Icons/sans-publicité.png'
 import iconOffresExclusive from '../../images/Icons/offres-exclusive.png'
 import iconSupportPrenium from '../../images/Icons/support-prenium.png'
+import itemOne from '../../images/items/item-1.jpg'
+import itemTwo from '../../images/items/item-2.jpg'
+import itemThree from '../../images/items/item-3.jpg'
+import itemFour from '../../images/items/item-4.jpg'
+import itemFive from '../../images/items/item-5.jpg'
+import itemSix from '../../images/items/item-6.jpg'
+import itemSeven from '../../images/items/item-7.jpg'
+import itemEight from '../../images/items/item-8.jpg'
+import itemNine from '../../images/items/item-9.jpg'
 import './Home.css'
 
 const Home = () => {
@@ -51,10 +60,66 @@ const Home = () => {
             question: "Comment puis-je donner mon avis ou des suggestions ?",
             answer: "Nous adorons entendre vos retours ! Vous pouvez nous faire part de vos suggestions ou commentaires via notre formulaire de contact ou en nous envoyant un e-mail à feedback@movies.com."
         }
-    ];
+    ]
     const toggleFAQ = (home) => {
         setActiveIndex(activeIndex === home ? null : home)
     }
+    const currentTrends = [
+    {
+            id: 1,
+            picture: itemOne,
+            order: 1,
+            status: 'Ajout récent',
+    },     
+    {
+            id: 2,
+            picture: itemTwo ,
+            order: 2,
+            status: 'Ajout récent',
+    },   
+    {
+            id: 3,
+            picture: itemThree,
+            order: 3,
+            status: 'Ajout récent',
+    },  
+    {
+            id: 4, 
+            picture: itemFour,
+            order: 4,
+            status: 'Ajout récent',
+    },
+    {
+            id: 5,
+            picture: itemFive,
+            order: 5,
+            status: 'Ajout récent',
+    },
+    {
+            id: 6, 
+            picture:  itemSix ,
+            order: 6,
+            status: 'Ajout récent',
+    },
+    {
+            id: 7, 
+            picture: itemSeven,
+            order: 7,
+            status: 'Ajout récent',
+    },
+    {
+            id: 8, 
+            picture: itemEight,
+            order: 8,
+            status: 'Ajout récent',
+    },
+    {
+            id: 9, 
+            picture: itemNine,
+            order: 9,
+            status: 'Ajout récent',
+    }
+    ]
     return (
         <>
             <div className=" text-light container-home">
@@ -98,6 +163,45 @@ const Home = () => {
                     </div>
 
                 </div>
+               <div className="p-5 section-three-custom">
+                    <h4>Tendance Actuelle</h4>
+                    <div  className="container-card">
+                        {currentTrends.map((currentTrends) => (
+                            <Link to='/' key={currentTrends.id}>
+                                <div
+                                    style={{ width:'250px', height:'400px'}}
+                                    className="bg-dark card">
+                                    <img
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'cover', 
+                                            position: 'absolute',
+                                            zIndex: '0',
+                                        }}
+                                        src={currentTrends.picture}
+                                        alt=""
+                                    />
+                                    <div style={{position:'relative', width: '100%', height: '100%', color:'#fff' }} className="card-info">
+                                        <p style={{
+                                            fontSize: '70px',
+                                        }}>{currentTrends.order}</p>
+                                        <p style={{
+                                            position: 'relative',
+                                            top: '250px',
+                                            backgroundColor: 'red',
+                                            margin: '10px',
+                                            textAlign:'center'
+                                        
+                                        }}>{currentTrends.status}</p>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))
+
+                        }
+                    </div>
+                </div>
                 <div className="p-5 section-four">
                     <h4 className='text-left mb-4'>Encore plus de raisons de vous abonner</h4>
                     <div className="container-cards-infos">
@@ -127,7 +231,7 @@ const Home = () => {
                                     <h4>Support Premium</h4>
                                     <p>Accédez à une assistance rapide et dédiée pour résoudre tous vos problèmes.</p>
                                     <img className='icon-custom' src={iconSupportPrenium} alt="Support premium" />
-                            </div>
+                                </div>
                         
                     </div>
                 </div>
@@ -144,6 +248,8 @@ const Home = () => {
                             </div>
                         ))}
                     </div>
+                </div>
+                <div className="section-six">
                 </div>
             </div>
         </>

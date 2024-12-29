@@ -66,7 +66,7 @@ const Header = () => {
                     <i className="bi-film"></i> Tous les films
                 </Link>
                 <Link className='link-sidebar' to="">
-                    <i className="bi-lightning"></i> Action
+                    <i className="bi-lightning"></i> ActionWXCVB
                 </Link>
                 <Link className='link-sidebar' to="">
                     <i className="bi-emoji-laughing"></i> Comédie

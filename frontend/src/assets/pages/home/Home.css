@@ -1,3 +1,6 @@
+a{
+    text-decoration: none;
+}
 .section-one-custom{
     background: url(../../images/Background.jpg);
     background-size: cover;
@@ -53,7 +56,8 @@
     color: #fff;
 }
 .section-two{
-    height: 100vh;
+    height: auto;
+    padding: 0 0 20px 0;
 }
 .top {
     position: relative;
@@ -98,6 +102,11 @@
 .linkInfo-custom{
     background-color: #2e2e2ec6;
     text-decoration: none;
+}
+.container-card{
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-gap:1em;
 }
 .container-cards-infos {
     display: grid;
@@ -183,5 +192,29 @@
     }
     .card-custom p {
         font-size: 0.85em;
+        width: 90%;
+    }
+    .container-cards-infos {
+        grid-template-columns: repeat(1, auto);
+    }
+    .card-custom {
+        align-items: start;
+        text-align: left;
+        padding: 10px 30px;
+        height: 150px;
+    }
+    .icon-custom {
+        position: absolute;
+        top: 90px;
+        z-index: 9;
+        right: 13px;
+        width:40px;
+        height:40px;
+    }
+    .container-card{
+        display: flex;
+        gap: 1em;
+        flex-direction: row;
+        overflow-y: auto;
     }
 }
