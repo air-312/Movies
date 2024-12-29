@@ -4,6 +4,7 @@ import logoDesktop from '../../images/Logos/Logo_movies_ft.svg'
 import logoMobile from '../../images/Logos/Logo_M.svg'
 import { Link } from 'react-router-dom'
 import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -11,13 +12,16 @@ const Header = () => {
     const handleSearchChange = (e) => {
         setSearchQuery(e.target.value)
     }
+    const navigate = useNavigate();
 
     const sidebarButton = useRef(null);
     const containerSidebar = useRef(null);
     const toggleSidebar = () =>{
         containerSidebar.current.classList.toggle('open');
     }
-
+    const btnLoginAndSignup = () => {
+        navigate('/login');
+    }
     return (
         <>
             <header className='d-flex align-center px-5 py-3'>
@@ -38,7 +42,7 @@ const Header = () => {
                         onChange={handleSearchChange}
                         placeholder='Recherche ...'
                     />
-                    <button className='btn-search' type="submit"><i className="fas fa-search"/>
+                    <button onClick={btnLoginAndSignup} className='btn-search' type="submit"><i className="fas fa-search"/>
                     </button>
                 </form>
                 <div className="btn-profileAndMenu">
@@ -66,20 +70,18 @@ const Header = () => {
                     <i className="bi-film"></i> Tous les films
                 </Link>
                 <Link className='link-sidebar' to="">
-                    <i className="bi-lightning"></i> ActionWXCVB
+                    <i className="bi-lightning"></i> Action
                 </Link>
                 <Link className='link-sidebar' to="">
                     <i className="bi-emoji-laughing"></i> Comédie
                 </Link>
-                <Link className='link-sidebar' to="">
+                <Link className='link-sidebar' to="/login">
                     <i className="bi-person-circle"></i> Profil
                 </Link>
                 <Link className='link-sidebar' to="">
                     <i className="bi-gear"></i> Paramètres
                 </Link>
                 </div>
-
-
         </>
     )
 }

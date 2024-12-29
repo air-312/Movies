@@ -5,6 +5,7 @@ import Header from './assets/components/header/Header';
 import Footer from './assets/components/footer/Footer';
 
 import Home from './assets/pages/home/Home';
+import Login from './assets/pages/login/Login';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route index element={<Home/>} /> 
+          <Route path='/login' element={<Login/>} /> 
         </Routes>
         <Footer />
       </Router>

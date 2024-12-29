@@ -1,7 +1,0 @@
-{
-    "editor.cursorBlinking": "phase",
-    "editor.fontFamily": "Consolas, 'Poppins', monospace",
-    "terminal.integrated.tabs.defaultIcon": "organization",
-    "screencastMode.fontSize": 20,
-    "workbench.editor.preventPinnedEditorClose": "keyboard"
-}
