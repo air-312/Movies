@@ -249,7 +249,18 @@ const Home = () => {
                         ))}
                     </div>
                 </div>
-                <div className="section-six">
+                <div className="p-5 section-six">
+                   <p className='text-center'> Prêt à regarder Movies ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</p>
+                     <form action="" className='d-flex align-items-center justify-content-center custom'>
+                        <input 
+                            type="email" 
+                            name="" 
+                            id="" 
+                            placeholder='Adresse e-mail'
+                            className='border-0 bg-light rounded p-2 input-custom'
+                        />
+                            <button className='py-2 px-3 d-flex border-0 rounded btn-custom' type="submit">Commencer<i className='fas fa-chevron-right'></i></button>
+                    </form>
                 </div>
             </div>
         </>
