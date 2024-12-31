@@ -6,17 +6,21 @@ import Footer from './assets/components/footer/Footer';
 
 import Home from './assets/pages/home/Home';
 import Login from './assets/pages/login/Login';
+import Register from './assets/pages/register/Register'
 
 function App() {
   return (
     <>
       <Router>
-        <Header />
         <Routes>
-          <Route index element={<Home/>} /> 
+          <Route index element={<>
+            <Header />
+            <Home />
+            <Footer />
+          </>} /> 
           <Route path='/login' element={<Login/>} /> 
+          <Route path='/register' element={<Register/>} /> 
         </Routes>
-        <Footer />
       </Router>
     </>
   );

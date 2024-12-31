@@ -34,7 +34,7 @@ const Login = () => {
                                         Pas encore inscrit ?
                                     </h6>
                                     
-                                    <Link style={{ fontSize: '0.7rem' }} className='text-light toggle'> S&apos;inscrire</Link>
+                                    <Link to={'/register'} style={{ fontSize: '0.7rem' }} className='text-light toggle'> S&apos;inscrire</Link>
                                     
                             </div>
 
@@ -42,13 +42,13 @@ const Login = () => {
 
                                 <div className="input-wrap">
                                     <input
-                                        type='text'
+                                        type='email'
                                         minLength='4'
                                         className='input-field'
                                         autoComplete=''
-                                        name="name"
-                                        id="name"
-                                        placeholder='Nom'
+                                        name="email"
+                                        id="email"
+                                        placeholder='E-mail'
                                         required
                                     />
                                 </div>
@@ -67,7 +67,7 @@ const Login = () => {
 
                                     <input
                                         type="submit"
-                                        value="Sign In"
+                                        value="Se connecter "
                                         style={{fontSize:'0.8em', height:'43px',transition: '0.3s'}}
                                         className='d-inline-block w-100 cursor-auto rounded text-light mb-4 border-0 bg-dark sign-btn'
                                     />
