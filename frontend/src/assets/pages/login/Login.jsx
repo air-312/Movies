@@ -1,98 +1,45 @@
-import '../login/Login.css'
-import items from '../../images/Background.jpg'
-import { Link } from 'react-router-dom'
-import Logo from '../../images/Logos/Logo_movies_ft.svg'
+import { useState } from "react";
+import axios from "axios";
 
 const Login = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [message, setMessage] = useState("");
+
+    const handleLogin = () => {
+        axios.post("http://localhost:5001/login", {
+            username,
+            password,
+        })
+        .then((response) => {
+            setMessage(response.data.message);
+        })
+        .catch((error) => {
+            setMessage(error.response ? error.response.data.message : "Erreur de connexion.");
+        });
+    };
+
     return (
-        <>
-            <div className="container-login">
-                <div style={{ backgroundColor: '#161616cb', maxWidth: '1000px', position: 'relative', zIndex: '2', height: '540px' }} className="w-100 rounded-5">
-                    
-                    <div className="d-flex inner-box">
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
+            <h2>Connexion</h2>
+            <input
+                type="name"
+                placeholder="Nom d'utilisateur"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                style={{ marginBottom: "10px" }}
+            /><br />
+            <input
+                type="password"
+                placeholder="Mot de passe"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                style={{ marginBottom: "10px" }}
+            /><br />
+            <button onClick={handleLogin}>Se connecter</button>
+            <p>{message}</p>
+        </div>
+    );
+};
 
-                    <div className="forms-wrap">
-                            <form
-                                style={{
-                                    maxWidth: '370px',
-                                    margin: '0 auto',
-                                    flexDirection:' column',
-                                }}
-                                action=""
-                                autoComplete='off' className='d-flex h-100 w-100 justify-content-evenly sign-in-from'>
-
-                            <div className="d-flex align-items-center w-100 logo">
-                                <Link to={'/'}>
-                                        <img style={{ width: '200px', marginBottom: '1.3em' }} src={Logo} alt="movies" />
-                                </Link>
-                            </div>
-
-                            <div className="heading">
-                                    <h2 className='text-light fs-2 fw-600 mb-0 '>Se connecter</h2>
-                                    
-                                    <h6 style={{ fontSize: '0.7rem', color: '#bababa' }} className='d-inline fw-400 '>
-                                        Pas encore inscrit ?
-                                    </h6>
-                                    
-                                    <Link to={'/register'} style={{ fontSize: '0.7rem' }} className='text-light toggle'> S&apos;inscrire</Link>
-                                    
-                            </div>
-
-                            <div className="actual-form">
-
-                                <div className="input-wrap">
-                                    <input
-                                        type='email'
-                                        minLength='4'
-                                        className='input-field'
-                                        autoComplete=''
-                                        name="email"
-                                        id="email"
-                                        placeholder='E-mail'
-                                        required
-                                    />
-                                </div>
-                                <div className="input-wrap">
-                                    <input
-                                        type="password"
-                                        minLength='4'
-                                        className='input-field'
-                                        autoComplete='off'
-                                        name="password"
-                                        id="password"
-                                        placeholder='Password'
-                                        required
-                                    />
-                                </div>
-
-                                    <input
-                                        type="submit"
-                                        value="Se connecter "
-                                        style={{fontSize:'0.8em', height:'43px',transition: '0.3s'}}
-                                        className='d-inline-block w-100 cursor-auto rounded text-light mb-4 border-0 bg-dark sign-btn'
-                                    />
-
-                                <p style={{flexDirection:'column', fontSize: '0.7rem'}} className="d-flex text-secondary">
-                                    Mot de pass oublié ou email de connexion ?
-                                    <Link className="text-secondary text" to={''}> Obtenir de l&apos;aide pour se connecter</Link>
-                                </p>
-                            </div>
-                        </form>
-                    </div>
-                    <div style={{overflow:'hidden', position:'absolute', width:'55%', left:'45%'}} className="h-100 rounded-5 container-img ">   
-                        <img className='img' style={{
-                                position: 'relative',
-                                width: '100%',
-                                height: '100%',
-                                zIndex: '4',
-                                objectFit:'cover'
-                        }} src={items} alt="" />
-                       
-                    </div>
-                </div>
-                </div>
-            </div>
-        </>
-    )
-}
-export default Login
+export default Login;
