@@ -36,7 +36,7 @@ const Register = () => {
 
   return (
     <div
-      style={{ height: "100vh", flexDirection: "column" }}
+      style={{ height: "110vh", flexDirection: "column" }}
       className="d-flex justify-content-center align-items-center container-log"
     >
       {message && (
@@ -141,8 +141,7 @@ const Register = () => {
                 </div>
         <div className="restructuring">
           <p className="text-light text-center">
-            Nous respectons votre vie privée et protégeons vos données
-            personnelles.
+            En vous inscrivant, vous acceptez <Link to={'/'} className="text-primary">les conditions d&apos;utilisations</Link> et <Link to={'/'} className="text-primary">la politique de confidentialité</Link>
           </p>
         </div>
       </div>

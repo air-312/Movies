@@ -17,7 +17,7 @@ const Login = () => {
         })
         .then((response) => {
             if (response.status === 200) {
-                navigate('/')
+                navigate('/ggg')
             }
         })
         .catch((error) => {
@@ -29,16 +29,16 @@ const Login = () => {
         <div
             style={{ height: '100vh', flexDirection:'column' }}
             className="d-flex justify-content-center align-items-center container-log"
-        
         >
+            
             {message && (
 
-            <p style={{ position: 'absolute', top: '0px', backgroundColor:'#ff0000' }}
-                className="text-light px-5 rounded"
-            >
-                {message}
-                <img style={{position:'absolute',width:'30px', left:'6px', bottom:'12px'}} src={iconDanger} alt="" />
-            </p>
+                <p style={{ position: 'absolute', top: '90px', backgroundColor:'#ff0000' }}
+                    className="text-light px-5 rounded"
+                >
+                    {message}
+                    <img style={{position:'absolute',width:'30px', left:'6px', bottom:'12px'}} src={iconDanger} alt="" />
+                </p>
             )}
             <div
                 style={{
