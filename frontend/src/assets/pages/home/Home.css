@@ -107,6 +107,7 @@ a{
     display: grid;
     grid-template-columns: repeat(3, 300px);
     grid-gap:1em;
+    place-content: center;
 }
 .container-cards-infos {
     display: grid;

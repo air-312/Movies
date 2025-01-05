@@ -1,10 +1,8 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './Header.css'
 import logoDesktop from '../../images/Logos/Logo_movies_ft.svg'
 import logoMobile from '../../images/Logos/Logo_M.svg'
-import { Link, useLocation } from 'react-router-dom'
-import { useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Header = () => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -15,12 +13,28 @@ const Header = () => {
 
     const sidebarButton = useRef(null);
     const containerSidebar = useRef(null);
-    const toggleSidebar = () =>{ containerSidebar.current.classList.toggle('open');}
+
+    const toggleSidebar = () => { containerSidebar.current.classList.toggle('open'); }
+    
+    useEffect(() => {
+        if (containerSidebar.current.classList.contains('open')) {
+            containerSidebar.current.classList.remove('open')
+        }
+    })
+    
     const btnLoginAndSignup = () => { navigate('/login'); }
+
+
+    const validPaths = ['/', '/login', '/register'];
+    const isNotFoundPage = !validPaths.includes(location.pathname);
+
     const isHomePage = location.pathname === '/'
     const isLoginPage = location.pathname === '/login'
     const isRegisterPage = location.pathname === '/register'
-    const isNotFoundPage = location.pathname === '*'
+
+    const loginRedirection = () => {
+        navigate('/login')
+    }
 
     return (
         <>
@@ -54,9 +68,9 @@ const Header = () => {
 
 
 
-                {!isNotFoundPage && (
+                {!isNotFoundPage && !isLoginPage && !isRegisterPage && (
                     <div className="btn-profileAndMenu">
-                    <button className="btn-profile"><i className="fas fa-user"/></button>
+                    <button onClick={loginRedirection} className="btn-profile"><i className="fas fa-user"/></button>
                     <button 
                         className="btn-menu"
                         ref={sidebarButton}

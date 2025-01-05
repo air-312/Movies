@@ -13,7 +13,7 @@
     right: 0;
     bottom: 0;
     position: absolute;
-    background: linear-gradient(to top, #000000,#ec0000a1);
+    background: linear-gradient(to top, #000000,#313131a1);
 }
 .hover:hover{
     background-color: #ff0000;

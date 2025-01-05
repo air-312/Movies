@@ -1,96 +1,42 @@
-.container-login{
-    background: url(../../images/Background.jpg);
+.container-log{
+    background: url('../../images/Background.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    width: 100%; 
-    min-height: 90vh;
-    overflow: hidden;
-    padding: 10em 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.container-login::before{
-    content: "";
     position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.container-log::before{
+    content: "";
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background:linear-gradient(to bottom,rgba(0, 0, 0, 0.7),#040404);
-    z-index:1;
+    position: absolute;
+    background: linear-gradient(to top, #000000,#000000a9);
 }
-.inner-box {
-  position: absolute;
-  width: calc(100% - 4.1rem);
-  height: calc(100% - 4.1rem);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.form {
+background-color: #070707b7;
 }
-
-.forms-wrap {
-  position: absolute;
-  height: 100%;
-  width: 45%;
-  top: 0;
-  left: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  transition: 0.8s ease-in-out;
+.name, .pssd, .user, .email, .tel {
+  background-color: #0377e418;
+  border: solid 1px #9494944d;
+  border-radius: 5px ;
+  padding:4px 9px;
+  display: flex;
+  flex-direction: column;
 }
-.toggle:hover {
-  color: #ff0404 !important;
+label{
+  color: #fff;
+  font-size: 0.9em ;
 }
-.input-wrap {
-  position: relative;
-  height: 27px;
-  margin-bottom: 2rem;
-}
-.input-field {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: none;
+#name, #pssd, #user, #email, #tel {
+  background:transparent;
   border: none;
+  color: #fff;
   outline: none;
-  border-bottom: 1px solid #bbb;
-  padding: 0;
-  font-size: 0.95rem;
-  color: #151111;
-  transition: 0.4s;
 }
-.input-field::placeholder{
-    color: #c7c7c76d;
+#name::placeholder, #pssd::placeholder {
+  font-size: 12px;
+  color: #ffffff31;
 }
-.sign-btn:hover {
-  background-color: #a30000 !important;
-}
-.text:hover {
-  color: #8a0000 !important;
-}
-
-@media (max-width: 850px) {
-  .container-login{
-    padding: 7rem 2rem;
-}
-    .forms-wrap{
-       width: 100%; 
-    }
-  .container-img{
-    display: none;
-  }
-  .logo{
-    justify-content: center;
-  }
-  .logo img{
-    margin-bottom: 0.5em !important;
-  }
-  .heading{
-    text-align: center;
-  }
-  
-}
-

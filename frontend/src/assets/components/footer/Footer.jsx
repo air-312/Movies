@@ -1,9 +1,22 @@
-import{Link} from 'react-router-dom'
 import Logo from '../../images/Logos/Logo_movies_ft.svg'
+import { Link, useLocation } from 'react-router-dom'
+
 import './Footer.css'
 
-const Footer = () =>{
+
+const Footer = () => {
+        const location = useLocation();
+
+        const validPaths = [ '/login', '/register'];
+    const isNotFoundPage = !validPaths.includes(location.pathname);
+
+    const isLoginPage = location.pathname === '/login'
+    const isRegisterPage = location.pathname === '/register'
+
     return (
+        <>
+        {!isLoginPage && !isRegisterPage && isNotFoundPage && ( 
+
         <footer className='text-light custom-container-footer'>
             <div className="profil-custom">
                         <Link to="/"><img className='logo' src={Logo} alt="" /></Link>
@@ -39,7 +52,9 @@ const Footer = () =>{
                             <Link className='text-center text-dark  custom-social-link'><i className="fab fa-youtube"></i></Link>
                         </div>
             </div>
-        </footer>
+        </footer >
+            )}
+        </>
     )
 }
 export default Footer;
