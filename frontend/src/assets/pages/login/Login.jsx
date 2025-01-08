@@ -11,13 +11,14 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleLogin = () => {
-        axios.post("http://localhost:5001/login", {
+        axios
+        .post("http://localhost:5001/login", {
             username,
             password,
         })
         .then((response) => {
             if (response.status === 200) {
-                navigate('/ggg')
+                navigate('/catalogue')
             }
         })
         .catch((error) => {
@@ -29,8 +30,7 @@ const Login = () => {
         <div
             style={{ height: '100vh', flexDirection:'column' }}
             className="d-flex justify-content-center align-items-center container-log"
-        >
-            
+        >           
             {message && (
 
                 <p style={{ position: 'absolute', top: '90px', backgroundColor:'#ff0000' }}
@@ -74,8 +74,6 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
             />
             </div>
-                
-
                 <button
                     onClick={handleLogin}
                     className="border-0 text-light py-2 rounded"

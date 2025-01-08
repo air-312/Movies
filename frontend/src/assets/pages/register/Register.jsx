@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import iconDanger from "../../images/Icons/danger.png";
 import "../login/Login.css";
@@ -11,9 +11,15 @@ const Register = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-    const navigate = useNavigate();
+  const [success, setSuccess] = useState(false); // Pour différencier les états
+  const navigate = useNavigate();
 
   const handleRegister = () => {
+    // Réinitialiser les messages avant chaque tentative
+    setMessage("");
+    setSuccess(false);
+
+    // Envoyer les données au backend
     axios
       .post("http://localhost:5001/register", {
         username,
@@ -23,11 +29,16 @@ const Register = () => {
         password,
       })
       .then((response) => {
-          if (response === 200) {
-            navigate('/login')
-        }
+        setMessage(response.data.message); // Message de succès
+        setSuccess(true); // Indiquer le succès de l'inscription
+
+        // Rediriger après un court délai
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000); // Attente de 2 secondes avant redirection
       })
       .catch((error) => {
+        // Gérer les erreurs du backend
         setMessage(
           error.response ? error.response.data.message : "Erreur d'inscription."
         );
@@ -44,21 +55,23 @@ const Register = () => {
           style={{
             position: "absolute",
             top: "0px",
-            backgroundColor: "#ff0000",
+            backgroundColor: success ? "#28a745" : "#ff0000", // Couleur verte si succès
           }}
           className="text-light px-5 rounded"
         >
           {message}
-          <img
-            style={{
-              position: "absolute",
-              width: "30px",
-              left: "6px",
-              bottom: "12px",
-            }}
-            src={iconDanger}
-            alt=""
-          />
+          {!success && (
+            <img
+              style={{
+                position: "absolute",
+                width: "30px",
+                left: "6px",
+                bottom: "12px",
+              }}
+              src={iconDanger}
+              alt=""
+            />
+          )}
         </p>
       )}
 
@@ -135,13 +148,27 @@ const Register = () => {
         >
           S&apos;inscrire
         </button>
-        <div style={{flexDirection:'column'}} className="d-flex gap-2 justify-content-center align-items-center links">
-                    
-                    <p className="text-light-emphasis">Vous avez déja un compte ? <Link to={'/login'} className="text-light"> Connectez-vous.</Link></p>
-                </div>
+        <div
+          style={{ flexDirection: "column" }}
+          className="d-flex gap-2 justify-content-center align-items-center links"
+        >
+          <p className="text-light-emphasis">
+            Vous avez déjà un compte ?{" "}
+            <Link to={"/login"} className="text-light">
+              Connectez-vous.
+            </Link>
+          </p>
+        </div>
         <div className="restructuring">
           <p className="text-light text-center">
-            En vous inscrivant, vous acceptez <Link to={'/'} className="text-primary">les conditions d&apos;utilisations</Link> et <Link to={'/'} className="text-primary">la politique de confidentialité</Link>
+            En vous inscrivant, vous acceptez{" "}
+            <Link to={"/"} className="text-primary">
+              les conditions d&apos;utilisations
+            </Link>{" "}
+            et{" "}
+            <Link to={"/"} className="text-primary">
+              la politique de confidentialité
+            </Link>
           </p>
         </div>
       </div>

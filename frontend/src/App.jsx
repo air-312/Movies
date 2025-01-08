@@ -5,6 +5,7 @@ import Footer from './assets/components/footer/Footer';
 import Login from './assets/pages/login/Login'
 import Register from './assets/pages/register/Register'
 import NotFound from './assets/pages/not_found/404'
+import Catalogue from './assets/pages/catalogue/Catalogue'
 
 import Home from './assets/pages/home/Home';
 
@@ -17,7 +18,8 @@ function App() {
           <Routes>
               <Route index element={<Home /> } />
               <Route path='/login' element={<Login/>}/>
-              <Route path='/register' element={<Register/>}/>
+              <Route path='/register' element={<Register />} />
+              <Route path='/catalogue' element={<Catalogue />}/>
               <Route path='*' element={<NotFound/>} />
           </Routes>
         <Footer/>
