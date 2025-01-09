@@ -12,7 +12,7 @@ const Login = () => {
 
     const handleLogin = () => {
         axios
-        .post("http://localhost:5001/login", {
+        .post("http://192.168.1.195:5001/login", {
             username,
             password,
         })

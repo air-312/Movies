@@ -21,7 +21,7 @@ const Register = () => {
 
     // Envoyer les données au backend
     axios
-      .post("http://localhost:5001/register", {
+      .post("http://192.168.1.195:5001/register", {
         username,
         name,
         email,
