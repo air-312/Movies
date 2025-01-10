@@ -5,6 +5,7 @@ import './Login.css'
 import { Link, useNavigate} from "react-router-dom";
 
 const Login = () => {
+    const SERVER_IP = `${import.meta.env.VITE_SERVER_IP}`;
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -12,7 +13,7 @@ const Login = () => {
 
     const handleLogin = () => {
         axios
-        .post("http://192.168.1.195:5001/login", {
+        .post(`${SERVER_IP}/login`, {
             username,
             password,
         })

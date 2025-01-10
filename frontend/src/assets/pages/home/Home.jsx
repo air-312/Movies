@@ -124,40 +124,74 @@ const Home = () => {
         <>
             <div className=" text-light container-home">
                 <div className="section-one-custom d-flex flex-column align-items-center justify-content-center">
-                    <div className="text-center d-flex  align-items-center td-custom">
-                        <h4 className='fs-custom'>Films en illimité</h4>
+                    <div 
+                        style={{
+                            position: 'absolute',
+                            zIndex: '2',
+                            width: '69%',
+                            fontSize: '1em',
+                            flexDirection: 'column',
+                        }}
+                        className="text-center d-flex  align-items-center td-custom">
+                        <h4 
+                            style={{fontSize: "3em"}}
+                            className='fs-custom'>Films en illimité</h4>
                         <p>
                             Partir de 5 €. Annulable à tout moment.
                             <br/>
                             Découvrez une vaste sélection de films, disponibles à tout moment. Profitez de l&apos;expérience cinématographique ultime, où que vous soyez.
                         </p>
                         
-                        <form action="" className='d-flex align-items-center justify-content-center custom'>
+                        <form action="" 
+                            style={{
+                                textDecoration: 'none',
+                                marginTop:'30px',
+                                flexWrap: 'wrap',
+                            }}
+                            className='d-flex w-100 gap-1 align-items-center justify-content-center custom'>
                         <input 
                             type="email" 
                             placeholder='Adresse e-mail'
                             className='border-0 bg-light rounded p-2 input-custom'
                         />
-                            <button className='py-2 px-3 d-flex border-0 rounded btn-custom' type="submit">
+                            <button
+                                style={{backgroundColor: '#ff0000'}}
+                                className='text-light gap-2 align-items-center py-2 px-3 d-flex border-0 rounded btn-custom' type="submit">
                                 Commencer<i className='fas fa-chevron-right'></i>
                             </button>
                         </form>
                     </div>
                     
                 </div>
-                <div className="section-two">
-                    <div className="top"><div className="blurry"></div></div>
+                <div style={{padding: '0 0 20px 0'}} className="section-two">
+                    <div className="top">
+                        <div
+                            style={{
+                                height: '30px',
+                                position: 'relative',
+                                bottom: '30px',
+                                left:'28%',
+                                boxShadow: '1px 20px 100px 5px rgb(11, 19, 255)',
+                            }}
+                            className="d-flex w-50 bg-light rounded blurry"></div>
+                    </div>
                     
-                    <div className="d-flex align-items-center justify-content-center pb-un-custom">
+                    <div className="d-flex align-items-center w-100 justify-content-center pb-un-custom">
                         <img
                             className='popcorn-custom'
                             src={iconPopcorn}
                             alt="Icon Popcorn"
                         />
-                        <div className="p-4 contenu-offre-custom">
+                        <div 
+                            style={{
+                                border: '1px solid #3b3b3b',
+                                background:'linear-gradient(to left, #43127a9b,#000000)',
+                                borderRadius: '20px',
+                            }}
+                            className="p-4 contenu-offre-custom">
                             <h4>Vos films préférés pour seulement 5 €.</h4>
                             <p>Découvrez notre offre sans publicité, la plus avantageuse.</p>
-                            <Link className='p-2 text-light rounded linkInfo-custom' to={'/'}>En savoir plus</Link>
+                            <Link style={{backgroundColor:'#2e2e2ec6', textDecoration:'none'}} className='p-2 text-light rounded linkInfo-custom' to={'/'}>En savoir plus</Link>
                         </div>
 
                     </div>
@@ -251,16 +285,24 @@ const Home = () => {
                 </div>
                 <div className="p-5 section-six">
                    <p className='text-center'> Prêt à regarder Movies ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.</p>
-                     <form action="" className='d-flex align-items-center justify-content-center custom'>
+                   <form action="" 
+                            style={{
+                                textDecoration: 'none',
+                                marginTop:'30px',
+                                flexWrap: 'wrap',
+                            }}
+                            className='d-flex w-100 gap-1 align-items-center justify-content-center custom'>
                         <input 
                             type="email" 
-                            name="" 
-                            id="" 
                             placeholder='Adresse e-mail'
                             className='border-0 bg-light rounded p-2 input-custom'
                         />
-                            <button className='py-2 px-3 d-flex border-0 rounded btn-custom' type="submit">Commencer<i className='fas fa-chevron-right'></i></button>
-                    </form>
+                            <button
+                                style={{backgroundColor: '#ff0000'}}
+                                className='text-light gap-2 align-items-center py-2 px-3 d-flex border-0 rounded btn-custom' type="submit">
+                                Commencer<i className='fas fa-chevron-right'></i>
+                            </button>
+                        </form>
                 </div>
             </div>
         </>

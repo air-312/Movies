@@ -1,0 +1,10 @@
+.form-register-custom {
+    background-color: #ca4343b7;
+    width: 400px;
+  }
+  @media (width < 700px) {
+    .from-register-custom {
+      background: transparent;
+      width: 0px;
+    }
+  }

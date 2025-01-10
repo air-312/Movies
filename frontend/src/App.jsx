@@ -6,7 +6,7 @@ import Login from './assets/pages/login/Login'
 import Register from './assets/pages/register/Register'
 import NotFound from './assets/pages/not_found/404'
 import Catalogue from './assets/pages/catalogue/Catalogue'
-import MovieList from './assets/pages/moviesList/MovieList'
+import Movie from './assets/components/moviesDetail/Movie'
 
 import Home from './assets/pages/home/Home';
 
@@ -21,7 +21,7 @@ function App() {
               <Route path='/login' element={<Login/>}/>
               <Route path='/register' element={<Register />} />
               <Route path='/catalogue' element={<Catalogue />}/>
-              <Route path="/movie/:id" element={<MovieList />} />
+              <Route path="/movie/:id" element={<Movie />} />
               <Route path='*' element={<NotFound/>} />
           </Routes>
         <Footer/>

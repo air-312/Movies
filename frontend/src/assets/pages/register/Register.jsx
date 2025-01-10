@@ -5,6 +5,7 @@ import iconDanger from "../../images/Icons/danger.png";
 import "../login/Login.css";
 
 const Register = () => {
+  const SERVER_IP = `${import.meta.env.VITE_SERVER_IP}`;
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -21,7 +22,7 @@ const Register = () => {
 
     // Envoyer les données au backend
     axios
-      .post("http://192.168.1.195:5001/register", {
+      .post(`${SERVER_IP}/register`, {
         username,
         name,
         email,
@@ -29,16 +30,14 @@ const Register = () => {
         password,
       })
       .then((response) => {
-        setMessage(response.data.message); // Message de succès
-        setSuccess(true); // Indiquer le succès de l'inscription
-
-        // Rediriger après un court délai
+        setMessage(response.data.message); 
+        setSuccess(true);
         setTimeout(() => {
           navigate("/login");
-        }, 2000); // Attente de 2 secondes avant redirection
+        }, 2000); 
       })
       .catch((error) => {
-        // Gérer les erreurs du backend
+        
         setMessage(
           error.response ? error.response.data.message : "Erreur d'inscription."
         );
@@ -51,38 +50,55 @@ const Register = () => {
       className="d-flex justify-content-center align-items-center container-log"
     >
       {message && (
-        <p
-          style={{
-            position: "absolute",
-            top: "0px",
-            backgroundColor: success ? "#28a745" : "#ff0000", // Couleur verte si succès
-          }}
-          className="text-light px-5 rounded"
-        >
-          {message}
-          {!success && (
-            <img
-              style={{
-                position: "absolute",
-                width: "30px",
-                left: "6px",
-                bottom: "12px",
-              }}
-              src={iconDanger}
-              alt=""
-            />
-          )}
-        </p>
+        <div 
+        style={{
+          backgroundColor: "#023ca8a9",
+          position:"absolute",
+          top:"0",
+          bottom:"0",
+          left:"0",
+          right:"0",
+          zIndex:"3",
+        }}
+          className="d-flex justify-content-center align-items-center message">
+          <p
+            style={{
+              position: "absolute",
+              top: "0px",
+              bottom:"0px",
+              left:"0px",
+              right:"0px",
+              zIndex:"3",
+              height:"200px",
+              width:"200px",
+              backgroundColor: success ? "#28a745" : "#ff0000", 
+            }}
+            className="d-flex justify-content-center align-items-center text-light px-5 rounde"
+          >
+            {message}
+            {!success && (
+              <img
+                style={{
+                  position: "absolute",
+                  width: "30px",
+                  left: "6px",
+                  bottom: "12px",
+                }}
+                src={iconDanger}
+                alt=""
+              />
+            )}
+          </p>
+        </div>
       )}
 
       <div
         style={{
           position: "relative",
           height: "auto",
-          width: "400px",
           flexDirection: "column",
         }}
-        className="d-flex gap-3 p-5 form"
+        className="d-flex gap-3 p-5 form-custom"
       >
         <h2 className="text-light">Inscription</h2>
 

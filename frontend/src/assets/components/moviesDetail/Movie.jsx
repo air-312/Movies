@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./MovieList.css";
+import "./Movie.css";
 import { useParams } from "react-router-dom";
 
 const Movie = () => {
@@ -10,7 +10,7 @@ const Movie = () => {
     useEffect(() => {
         fetchMovieDetails();
         window.scrollTo(0, 0);
-    }, []);
+    },);
 
     const fetchMovieDetails = async () => {
         try {
